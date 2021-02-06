@@ -1,16 +1,14 @@
-function Player (props) {
+function Player(props) {
+    const playerConditional = props.hobbies.length ? props.hobbies.map(hobby => {
+        return <li key= {props.id}>{hobby}</li>
+    })
+    :<p>None Listed</p>
     return (
-    <div>
-        <h3>Player Name: {props.firstName}</h3>
-        <p>Jersey Number: {props.jerseyNumber}</p>
-        <ul>Hobbies: <li>{props.hobbies.map(hobby => {
-            return (
-                <li>{hobby}</li>
-            )
-            })}</li>
-        </ul>
-        <hr></hr>
-    </div>
+        <div>
+            <h3>Player Name: {props.firstName}</h3>
+            <p>Jersey Number: {props.jerseyNumber}</p>
+            <p>{playerConditional}</p>
+        </div>
     )
 }
 
